@@ -1,11 +1,10 @@
 import express from 'express';
+import { getExampleController } from '../controllers/example.js';
 
 const router = express.Router();
 
 
-router.get('/', (req,res) => {
-  res.send('Fetching all entry diaries')
-})
+router.get('/', getExampleController)
 
 router.post('/', (req,res) => {
   res.send('Saving a diary!')

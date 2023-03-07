@@ -1,5 +1,7 @@
 import express from 'express'
 import example from './routes/example.js'
+import cors from 'cors'
+
 
 const app = express()
 app.use(express.json())  // middleware que transforma la req.body a un json
@@ -17,5 +19,6 @@ app.listen(PORT, () => {
 
 
 ////////////////////////////////
+app.use(cors())
 app.use('/api/example', example)
 ////////////////////////////////
